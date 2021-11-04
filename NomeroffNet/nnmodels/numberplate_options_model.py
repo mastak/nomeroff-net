@@ -56,7 +56,7 @@ class NPOptionsNet(ClassificationNet):
         if self.batch_size > 1:
             x1 = self.batch_norm_reg(x1)
         x1 = functional.relu(self.fc2_reg(x1))
-        x1 = functional.softmax(self.fc3_reg(x1))
+        x1 = functional.softmax(self.fc3_reg(x1), dim=1)
         
         x2 = x.reshape(x.size(0), -1)
         x2 = self.dropout_line(x2)
@@ -64,7 +64,7 @@ class NPOptionsNet(ClassificationNet):
         if self.batch_size > 1:
             x2 = self.batch_norm_line(x2)
         x2 = functional.relu(self.fc2_line(x2))
-        x2 = functional.softmax(self.fc3_line(x2))
+        x2 = functional.softmax(self.fc3_line(x2), dim=1)
 
         return x1, x2
 
