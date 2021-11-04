@@ -19,3 +19,10 @@ tensorflow/*
 public/npdetect.php
 Mask_RCNN/*
 centermask2/*
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+*.egg-info/
+*.egg
